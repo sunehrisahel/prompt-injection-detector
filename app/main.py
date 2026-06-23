@@ -12,9 +12,8 @@ from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(_PROJECT_ROOT / ".env")
-load_dotenv(_PROJECT_ROOT / "prompt-injection-detector" / ".env", override=False)
 
 from app.analytics import compute_analytics
 from app.classifier import get_model_warning, load_model
